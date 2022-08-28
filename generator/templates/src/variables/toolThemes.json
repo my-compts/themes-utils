@@ -1,0 +1,26 @@
+{
+  "theme-lightred": {
+    "mainColor": "#e70012",
+    "bgColor": "#606266",
+    "mainFont": "#333333",
+    "subFont": "#666666",
+    "mainLine": "#cccccc",
+    "subLine": "#999999"
+  },
+  "theme-default": {
+    "mainColor": "#409eff",
+    "bgColor": "#2f5377",
+    "mainFont": "#333333",
+    "subFont": "#cccccc",
+    "mainLine": "#C0C4CC",
+    "subLine": "#909399"
+  },
+  "theme-jsblue": {
+    "mainColor": "#0081cc",
+    "bgColor": "#606266",
+    "mainFont": "#333333",
+    "subFont": "#666666",
+    "mainLine": "#cccccc",
+    "subLine": "#999999"
+  }
+}

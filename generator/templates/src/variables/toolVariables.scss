@@ -1,0 +1,368 @@
+// 通用字体颜色
+$normal-color4: #333;
+$normal-color4_1: lighten($normal-color4, 66.6%); // #ddd
+// 辅助色
+$normal-color0: #303133;
+$normal-color1: #fff;
+$normal-color0_1: lighten($normal-color0, 19.4%); //#606266
+$normal-color0_1_2: lighten($normal-color0_1, 13%); //#808388
+$normal-color0_1_1: darken($normal-color0_1_2, 6.4%); //#707377
+$normal-color0_2: saturate(lighten($normal-color0_1, 19.4%), 0.8%); //#909399
+$normal-color0_2_1: lighten($normal-color0_2, 21%); //#c8c9cc
+$normal-color0_3: saturate(lighten($normal-color0_1, 38.8%), 7.5%); //#c0c4cc
+$normal-color7: #DCDFE6;
+$normal-color8: darken($normal-color0, 9.8%); // #181819
+$normal-color9: lighten($normal-color0, 4.3%); // #3b3c3e
+
+// 中性色-适用于大多场景
+$fitall-color1: #f5f7fa;
+$fitall-color2: #f2f6fc;
+
+:root {
+        --color-main: #409eff;
+        --color3_0: #0A2A4C;
+        --color3_1: #0E3967;
+        --color3_2: #2F5277;
+        --color3_3: #AFBFD0;
+        --color3_4: #0C345E;
+        --color3_5: #577DA5;
+        --color3_6: #ECF5FF;
+        --color3_7: #D9ECFF;
+        --color3_8: #B3D8FF;
+        --color3_9: #496888;
+        --color3_10: #409eff;
+}
+
+$normal-color3: #0A2A4C;
+$normal-color3_hover: #B3D8FF;
+$normal-color3_1: #0E3967;
+$normal-color3_2: #2F5277;
+$normal-color3_3: #AFBFD0;
+$normal-color3_4: #0C345E;
+$normal-color3_5: #577DA5;
+$normal-color3_6: #ECF5FF;
+$normal-color3_7: #D9ECFF;
+$normal-color3_9: #496888;
+
+// ie 不兼容此写法，暂时先屏蔽变量方式
+// $normal-color3: var(--color3_0);
+// $normal-color3_hover: var(--color3_8);
+// $normal-color3_1: var(--color3_1);
+// $normal-color3_2: var(--color3_2);
+// $normal-color3_3: var(--color3_3);
+// $normal-color3_4: var(--color3_4);
+// $normal-color3_5: var(--color3_5);
+// $normal-color3_6: var(--color3_6);
+// $normal-color3_7: var(--color3_7);
+// $normal-color3_9: var(--color3_9);
+
+// 各主题主色调
+// $element-main-default: var(--color-main);
+$element-main-default: #409eff;
+$element-main-lightred: #e70012;
+$element-main-lightblue: #0081cc;
+// hover active
+$opc: 0.6;
+$element-main-hover-default: $normal-color3_hover;
+$element-main-hover-lightred: rgba($element-main-lightred, $opc);
+$element-main-hover-lightblue: rgba($element-main-lightblue, $opc);
+
+$element-main-lightred-help: desaturate(darken($element-main-lightred, 17.6%), 5.7%); //#89040e
+$element-main-lightred-help1: darken(desaturate($element-main-lightred, 8.3%), 31.2%); // #450308
+$element-main-lightred-help3: lighten($element-main-lightred, 40.4%); // #ffb6bc
+
+$element-main-lightblue-help: #0a8bd6; // 特殊处理
+$element-main-lightblue-help1: #0075b9; // 特殊处理
+$element-main-lightblue-help3: lighten($element-main-lightblue, 40.4%);
+
+// $normal-color3_1: lighten($normal-color3, 6.1%); // #0e3b67
+// $normal-color3_2: desaturate(lighten($normal-color3, 15.7%), 33.4%); // #2f5377
+// $normal-color3_3: desaturate(lighten($normal-color3, 58.3%), 50.7%); // #afc0d0
+
+// 特殊色
+$special-color1: #45fffd;
+
+// 字体颜色
+$ft-color-main: $normal-color4;
+$ft-color-main-indeep: $normal-color1;
+
+$ft-color-main-default: $ft-color-main;
+$ft-color-main-lightred: $ft-color-main;
+$ft-color-main-lightblue: $ft-color-main;
+
+$ft-color-frame-default: $ft-color-main-indeep;
+$ft-color-frame-lightred: $ft-color-main;
+$ft-color-frame-lightblue: $ft-color-main;
+
+$ft-color-subframe-default: $normal-color3_3;
+$ft-color-subframe-lightred: $normal-color0_1;
+$ft-color-subframe-lightblue: $normal-color0_1;
+
+$ft-color-frametree-default: $normal-color3_3;
+$ft-color-frametree-lightred: $normal-color1;
+$ft-color-frametree-lightblue: $normal-color1;
+
+$ft-color-emphasize-default: $element-main-default;
+$ft-color-emphasize-lightred: $element-main-lightred;
+$ft-color-emphasize-lightblue: $element-main-lightblue;
+
+$ft-color-subtagicon-default: $normal-color3_3;
+$ft-color-subtagicon-lightred: mix($normal-color1, $element-main-lightred, 50%);
+$ft-color-subtagicon-lightblue: mix($normal-color1, $element-main-lightblue, 50%);
+// 特殊强调色
+$ft-color-special-emp-default: $special-color1;
+$ft-color-special-emp-lightred: $element-main-lightred-help3;
+$ft-color-special-emp-lightblue: $element-main-lightblue-help3;
+// 特殊强调色1
+$ft-color-special-emp1-default: $special-color1;
+$ft-color-special-emp1-lightred: $element-main-lightred;
+$ft-color-special-emp1-lightblue: $element-main-lightblue;
+// 表格内操作按钮
+$ft-color-tbIcon-default: $element-main-default;
+$ft-color-tbIcon-lightred: $normal-color0_2;
+$ft-color-tbIcon-lightblue: $normal-color0_2;
+// 表格内操作按钮强调色
+$ft-color-tbIcon-emp-default: $element-main-hover-default;
+$ft-color-tbIcon-emp-lightred: $element-main-hover-lightred;
+$ft-color-tbIcon-emp-lightblue: $element-main-hover-lightblue;
+
+// 深色背景文字色
+$ft-color-indark-default: $normal-color3_3;
+$ft-color-indark-lightred: $normal-color4_1;
+$ft-color-indark-lightblue: $normal-color4_1;
+
+// 深色背景单选复选框文字色
+$ft-color-activelabelIndark-default: $element-main-default;
+$ft-color-activelabelIndark-lightred: $normal-color4_1;
+$ft-color-activelabelIndark-lightblue: $normal-color4_1;
+
+// 图标禁用色
+$ft-color-disabled-default: $normal-color0_2_1;
+$ft-color-disabled-lightred: $normal-color0_2_1;
+$ft-color-disabled-lightblue: $normal-color0_2_1;
+
+
+// 背景颜色
+$bg-color-frame-main-default: $normal-color3;
+$bg-color-frame-main-lightred: $normal-color1;
+$bg-color-frame-main-lightblue: $normal-color1;
+
+$bg-color-newtab-default: $normal-color3;
+$bg-color-newtab-lightred: $element-main-lightred-help;
+$bg-color-newtab-lightblue: $element-main-lightblue-help;
+
+$bg-color-frame-sub-default: $normal-color3_1;
+$bg-color-frame-sub-lightred: $element-main-lightred-help;
+$bg-color-frame-sub-lightblue: $element-main-lightblue-help;
+
+$bg-color-frame-trd-default: $normal-color3_2;
+$bg-color-frame-trd-lightred: $normal-color1;
+$bg-color-frame-trd-lightblue: $normal-color1;
+
+$bg-color-design-subhead-default: $bg-color-frame-sub-default;
+$bg-color-design-subhead-lightred: $normal-color0_2;
+$bg-color-design-subhead-lightblue: $normal-color0_2;
+
+$bg-color-design-pane-default: $bg-color-frame-trd-default;
+$bg-color-design-pane-lightred: $normal-color0_1;
+$bg-color-design-pane-lightblue: $normal-color0_1;
+
+$bg-color-design-paneform-default: $normal-color3_4;
+$bg-color-design-paneform-lightred: $normal-color9;
+$bg-color-design-paneform-lightblue: $normal-color9;
+
+$bg-color-maintitle-default: $element-main-default;
+$bg-color-maintitle-lightred: $element-main-lightred;
+$bg-color-maintitle-lightblue: $element-main-lightblue;
+
+$bg-color-tagitem-default: $normal-color3_6; // #ecf5ff
+$bg-color-tagitem-lightred: mix($normal-color1, $element-main-lightred, 90%);
+$bg-color-tagitem-lightblue: mix($normal-color1, $element-main-lightblue, 90%);
+
+$bg-color-blockselect-default: $normal-color3_7;
+$bg-color-blockselect-lightred: mix($normal-color1, $element-main-lightred, 80%);
+$bg-color-blockselect-lightblue: mix($normal-color1, $element-main-lightblue, 80%);
+
+$bg-color-specialblock-default: $normal-color3_9;
+$bg-color-specialblock-lightred: $normal-color0_1_1;
+$bg-color-specialblock-lightblue: $normal-color0_1_1;
+
+// 大块面背景色
+$bg-color-bigblock-default: $fitall-color2;
+$bg-color-bigblock-lightred: $fitall-color1;
+$bg-color-bigblock-lightblue: $fitall-color1;
+
+$bg-color-midblock-default: $element-main-default;
+$bg-color-midblock-lightred: $normal-color0_2;
+$bg-color-midblock-lightblue: $normal-color0_2;
+
+// 深浅切换输入框边框颜色
+$border-main-default: $normal-color3;
+$border-main-lightred: $normal-color7;
+$border-main-lightblue: $normal-color7;
+
+// 深深切换输入框边框颜色
+$border-darkTodark-default: $normal-color3;
+$border-darkTodark-lightred: $normal-color8;
+$border-darkTodark-lightblue: $normal-color8;
+
+// 分隔边框颜色1
+$border-sepline1-default: $normal-color3;
+$border-sepline1-lightred: $normal-color0;
+$border-sepline1-lightblue: $normal-color0;
+
+// 分隔边框颜色2
+$border-sepline2-default: $normal-color3_1;
+$border-sepline2-lightred: $normal-color0;
+$border-sepline2-lightblue: $normal-color0;
+
+// 分隔边框颜色3
+$border-sepline3-default: $normal-color3_5;
+$border-sepline3-lightred: $normal-color0;
+$border-sepline3-lightblue: $normal-color0;
+
+// 提示块面输入边框颜色
+$border-tipblock-default: $normal-color3_6;
+$border-tipblock-lightred: $normal-color0;
+$border-tipblock-lightblue: $normal-color0;
+
+// 边框颜色
+$border-toolsub-default: $normal-color3;
+$border-toolsub-lightred: $element-main-lightred-help1;
+$border-toolsub-lightblue: $element-main-lightblue-help1;
+// 二级边框颜色
+$border-tooltrd-default: $normal-color3_5;
+$border-tooltrd-lightred: mix($normal-color1, $normal-color0_1, 80%);
+$border-tooltrd-lightblue: mix($normal-color1, $normal-color0_1, 80%);
+// 框架头部边框色特殊处理
+$border-frame-head-default: $normal-color3;
+$border-frame-head-lightred: $element-main-lightred;
+$border-frame-head-lightblue: $element-main-lightblue;
+// 通用表格头部边框色
+$border-thead-default: $element-main-default;
+$border-thead-lightred: $element-main-lightred;
+$border-thead-lightblue: $element-main-lightblue;
+// 多表头内分割线
+$border-thead01-default: $normal-color7;
+$border-thead01-lightred: $normal-color7;
+$border-thead01-lightblue: $normal-color7;
+
+// default
+$theme-default: (background-color-default: (toolmain: $bg-color-frame-main-default,
+                toolsub: $bg-color-frame-sub-default,
+                tooltrd: $bg-color-frame-trd-default,
+                newtab: $bg-color-newtab-default,
+                design-subhead: $bg-color-design-subhead-default,
+                design-pane: $bg-color-design-pane-default,
+                design-paneform: $bg-color-design-paneform-default,
+                tagitem: $bg-color-tagitem-default,
+                maintitle: $bg-color-maintitle-default,
+                specialblock: $bg-color-specialblock-default,
+                bigblock: $bg-color-bigblock-default,
+                midblock: $bg-color-midblock-default,
+                blockselect: $bg-color-blockselect-default),
+        background-default: (),
+        color-default: (toolmain: $ft-color-main-default,
+                frame: $ft-color-frame-default,
+                subframe: $ft-color-subframe-default,
+                frametree: $ft-color-frametree-default,
+                emphasize: $ft-color-emphasize-default,
+                special-emp: $ft-color-special-emp-default,
+                special-emp1: $ft-color-special-emp1-default,
+                subtagicon: $ft-color-subtagicon-default,
+                indark: $ft-color-indark-default,
+                activelabelIndark: $ft-color-activelabelIndark-default,
+                disabled: $ft-color-disabled-default,
+                tbIcon: $ft-color-tbIcon-default,
+                tbIcon-emp: $ft-color-tbIcon-emp-default),
+        border-color-default: (toolmain: $border-main-default,
+                toolsub: $border-toolsub-default,
+                tooltrd: $border-tooltrd-default,
+                darkTodark: $border-darkTodark-default,
+                sepline1: $border-sepline1-default,
+                sepline2: $border-sepline2-default,
+                sepline3: $border-sepline3-default,
+                tipblock: $border-tipblock-default,
+                frame-head: $border-frame-head-default,
+                border01: $border-thead01-default,
+                toolthead: $border-thead-default));
+
+// lightred
+$theme-lightred: (background-color-lightred: (toolmain: $bg-color-frame-main-lightred,
+                toolsub: $bg-color-frame-sub-lightred,
+                tooltrd: $bg-color-frame-trd-lightred,
+                newtab: $bg-color-newtab-lightred,
+                design-subhead: $bg-color-design-subhead-lightred,
+                design-pane: $bg-color-design-pane-lightred,
+                design-paneform: $bg-color-design-paneform-lightred,
+                tagitem: $bg-color-tagitem-lightred,
+                maintitle: $bg-color-maintitle-lightred,
+                specialblock: $bg-color-specialblock-lightred,
+                bigblock: $bg-color-bigblock-lightred,
+                midblock: $bg-color-midblock-lightred,
+                blockselect: $bg-color-blockselect-lightred),
+        background-lightred: (),
+        color-lightred: (toolmain: $ft-color-main-lightred,
+                frame: $ft-color-frame-lightred,
+                subframe: $ft-color-subframe-lightred,
+                frametree: $ft-color-frametree-lightred,
+                emphasize: $ft-color-emphasize-lightred,
+                special-emp: $ft-color-special-emp-lightred,
+                special-emp1: $ft-color-special-emp1-lightred,
+                subtagicon: $ft-color-subtagicon-lightred,
+                indark: $ft-color-indark-lightred,
+                activelabelIndark: $ft-color-activelabelIndark-lightred,
+                disabled: $ft-color-disabled-lightred,
+                tbIcon: $ft-color-tbIcon-lightred,
+                tbIcon-emp: $ft-color-tbIcon-emp-lightred),
+        border-color-lightred: (toolmain: $border-main-lightred,
+                toolsub: $border-toolsub-lightred,
+                tooltrd: $border-tooltrd-lightred,
+                darkTodark: $border-darkTodark-lightred,
+                sepline1: $border-sepline1-lightred,
+                sepline2: $border-sepline2-lightred,
+                sepline3: $border-sepline3-lightred,
+                tipblock: $border-tipblock-lightred,
+                frame-head: $border-frame-head-lightred,
+                border01: $border-thead01-lightred,
+                toolthead: $border-thead-lightred));
+
+// lightblue
+$theme-jsblue: (background-color-jsblue: (toolmain: $bg-color-frame-main-lightblue,
+                toolsub: $bg-color-frame-sub-lightblue,
+                tooltrd: $bg-color-frame-trd-lightblue,
+                newtab: $bg-color-newtab-lightblue,
+                design-subhead: $bg-color-design-subhead-lightblue,
+                design-pane: $bg-color-design-pane-lightblue,
+                design-paneform: $bg-color-design-paneform-lightblue,
+                tagitem: $bg-color-tagitem-lightblue,
+                maintitle: $bg-color-maintitle-lightblue,
+                specialblock: $bg-color-specialblock-lightblue,
+                bigblock: $bg-color-bigblock-lightblue,
+                midblock: $bg-color-midblock-lightblue,
+                blockselect: $bg-color-blockselect-lightblue),
+        background-jsblue: (),
+        color-jsblue: (toolmain: $ft-color-main-lightblue,
+                frame: $ft-color-frame-lightblue,
+                subframe: $ft-color-subframe-lightblue,
+                frametree: $ft-color-frametree-lightblue,
+                emphasize: $ft-color-emphasize-lightblue,
+                special-emp: $ft-color-special-emp-lightblue,
+                special-emp1: $ft-color-special-emp1-lightblue,
+                subtagicon: $ft-color-subtagicon-lightblue,
+                indark: $ft-color-indark-lightblue,
+                activelabelIndark: $ft-color-activelabelIndark-lightblue,
+                disabled: $ft-color-disabled-lightblue,
+                tbIcon: $ft-color-tbIcon-lightblue,
+                tbIcon-emp: $ft-color-tbIcon-emp-lightblue),
+        border-color-jsblue: (toolmain: $border-main-lightblue,
+                toolsub: $border-toolsub-lightblue,
+                tooltrd: $border-tooltrd-lightblue,
+                darkTodark: $border-darkTodark-lightblue,
+                sepline1: $border-sepline1-lightblue,
+                sepline2: $border-sepline2-lightblue,
+                sepline3: $border-sepline3-lightblue,
+                tipblock: $border-tipblock-lightblue,
+                frame-head: $border-frame-head-lightblue,
+                border01: $border-thead01-lightblue,
+                toolthead: $border-thead-lightblue));

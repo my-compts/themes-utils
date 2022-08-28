@@ -1,0 +1,21 @@
+{
+  "name": "vue-cli-plugin-ngbd-themes",
+  "version": "1.0.71",
+  "description": "vue-cli 3 plugin to add ngbd-themes",
+  "main": "index.js",
+  "scripts": {
+    "lint": "vue-cli-service lint"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "ngbd-themes",
+    "vue",
+    "vue-cli",
+    "plugin",
+    "cli"
+  ],
+  "author": "xuxiaoxu",
+  "license": "MIT"
+}

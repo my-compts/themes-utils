@@ -1,0 +1,325 @@
+/*
+重置自定义组件或者elementui组件样式写此文件中
+*/
+@import './toolThemes.scss';
+
+// 表格样式重置
+.el-table thead tr,
+.el-table thead th {
+  background-color: #f5f7fa;
+  // border-bottom: 2px solid;
+  border-right-width: 0 !important;
+  // @include style-tool-color('background-color', 'toolmain');
+}
+
+// 考虑到多表头的情况
+.el-table thead tr:last-child th {
+  border-bottom: 2px solid !important;
+  @include style-tool-color('border-color', 'toolthead', important);
+
+  &.gutter {
+    border-bottom: 2px solid !important;
+    @include style-tool-color('border-color', 'toolthead', important);
+    @include style-tool-color('border-color', 'border01', special, 'border-right-color');
+  }
+}
+
+.el-table thead.is-group tr:last-child th {
+  border-right: 1px solid #dcdfe6 !important;
+}
+
+.el-table thead.is-group th {
+  border-right: 1px solid #dcdfe6 !important;
+  @include style-tool-color('border-color', 'border01');
+
+  &.is-leaf {
+    border-right: 1px solid #dcdfe6 !important;
+    border-bottom: 2px solid;
+    @include style-tool-color('border-color', 'toolthead');
+  }
+}
+
+.el-table thead th.is-leaf {
+  @include style-tool-color('border-color', 'toolthead')
+}
+
+// .el-table th.gutter {
+//   border-bottom: 2px solid !important;
+//   @include style-tool-color('border-color', 'toolthead', important);
+// }
+
+// 不用表格的border属性
+.bd-table {
+  .el-table {
+    border: 1px solid #ebeef5;
+
+    &::before {
+      height: 0;
+    }
+  }
+
+  .el-table__fixed-right::before,
+  .el-table__fixed::before {
+    height: 0;
+  }
+}
+
+// 重置穿梭框样式
+.el-transfer {
+  .el-transfer__button:first-child {
+    margin-bottom: 10px;
+  }
+
+  .el-transfer__button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 0;
+  }
+
+  .el-button+.el-button {
+    margin-left: 0px;
+  }
+}
+
+// vxetable表格样式重置
+.vxe-header--column {
+  border-bottom: 3px solid;
+  @include style-tool-color('border-color', 'toolthead');
+
+  .vxe-cell {
+    @include style-tool-color('color', 'toolmain');
+  }
+}
+
+.vxe-table.border--default .vxe-table--header-wrapper,
+.vxe-table.border--full .vxe-table--header-wrapper,
+.vxe-table.border--outer .vxe-table--header-wrapper {
+  background-color: #f5f7fa;
+}
+
+// handsontable样式重置
+.handsontable {
+  tbody th {
+    &.ht__active_highlight {
+      @include style-tool-color('background-color', 'tagitem', important);
+    }
+  }
+
+  thead th.ht__active_highlight {
+    @include style-tool-color('background-color', 'tagitem', important);
+  }
+
+  .htBorders .wtBorder {
+    @include style-tool-color('background-color', 'maintitle', important);
+  }
+
+  .handsontableInput {
+    box-shadow: none;
+    border: 2px solid;
+    @include style-tool-color('border-color', 'toolthead');
+  }
+}
+
+// 表格内操作按钮
+.main-content {
+  .table-icon {
+    @include style-tool-color('color', 'tbIcon', important);
+
+    &.disabled {
+      cursor: not-allowed !important;
+      @include style-tool-color('color', 'disabled', important);
+    }
+
+    &:hover {
+      @include style-tool-color('color', 'tbIcon-emp', important);
+
+      &.disabled {
+        @include style-tool-color('color', 'disabled', important);
+      }
+    }
+  }
+}
+
+// 表格右上角操作按钮
+.main-content-tool .tool-btn .tool-btn-icon {
+  @include style-tool-color('color', 'emphasize', important);
+}
+
+.main-content-tool .tool-btn:hover .tool-btn-text {
+  @include style-tool-color('color', 'emphasize', important);
+}
+
+// 深背景下的表单
+.special-input {
+  .is-focus .el-input__inner {
+    // border-color: #409eff;
+    @include style-tool-color('border-color', 'toolthead');
+    background-color: #fff;
+    color: #333;
+  }
+
+  .el-input__inner {
+    // color: #fff;
+    @include style-tool-color('color', 'frame', important);
+    // background-color: #0e3b67;
+    @include style-tool-color('background-color', 'toolmain', important);
+    border: 1px solid;
+    @include style-tool-color('border-color', 'toolmain');
+  }
+
+  .input-search.el-input .el-input__inner:focus {
+    background-color: #fff;
+    color: #666666;
+    border: 1px solid #0a2b4c;
+  }
+
+  .el-select:hover .el-input__inner,
+  .el-input:hover .el-input__inner {
+    // border-color: #498bce;
+    @include style-tool-color('border-color', 'toolthead');
+  }
+}
+
+.el-header {
+  &.design-page {
+    @include style-tool-color('background-color', 'newtab', important);
+  }
+}
+
+.head-opt-btn {
+  @include style-tool-color('color', '#fff', nochange);
+}
+
+.field-tb-wrap {
+  &.el-table {
+    th>.cell {
+      @include style-tool-color('color', 'emphasize', important);
+    }
+
+    td {
+      @include style-tool-color('border-color', 'toolmain', important);
+    }
+  }
+}
+
+// 目录树
+.el-tree-node__content:hover {
+  @include style-tool-color('color', 'emphasize', important);
+}
+
+.el-tree-node.is-current>.el-tree-node__content .tree-tit {
+  @include style-tool-color('color', 'emphasize', important);
+}
+
+// 下拉样式
+.el-select-dropdown .selected,
+.el-select-dropdown .el-tree .is-current .el-tree-node__label {
+  @include style-tool-color('background-color', 'tagitem', important);
+  @include style-tool-color('color', 'emphasize', important);
+}
+
+.el-select-dropdown .hover,
+.el-select-dropdown .el-select-dropdown__item:hover {
+  // @include style-tool-color('background-color', 'tagitem', important);
+  @include style-tool-color('color', 'emphasize', important);
+}
+
+// 下拉树样式
+.el-select-dropdown .el-tree .is-current .el-tree-node__content {
+  @include style-tool-color('background-color', 'tagitem', important);
+}
+
+// 交互式sql组件样式换肤设置
+.bottom-wrap.el-footer .bottom-query-wrap .el-tabs .el-tabs__item.is-active,
+.bottom-wrap.el-footer .bottom-query-wrap .el-tabs .el-tabs__item.is-active .bottom-tab-icon,
+.bottom-wrap.el-footer .bottom-query-wrap .el-tabs .el-tabs__item:hover .bottom-tab-icon,
+.bottom-wrap.el-footer .bottom-query-wrap .el-tabs .el-tabs__item .bottom-tab-icon,
+.rt-func-wrap .func-bottom-wrap .func-tit-wrap,
+.bottom-wrap.el-footer .bottom-query-wrap .el-tabs .el-tabs__item:hover {
+  @include style-tool-color('color', 'emphasize', important);
+}
+
+.bottom-wrap.el-footer .bottom-query-wrap .el-tabs .el-tabs__active-bar {
+  @include style-tool-color('background-color', 'maintitle', important);
+}
+
+.rt-func-wrap .func-bottom-wrap .func-tit-wrap,
+.right-aside-wrap .el-tree-node__content:hover,
+.right-aside-wrap .el-tree-node:focus>.el-tree-node__content {
+  @include style-tool-color('background-color', 'tagitem', important);
+}
+
+.frame-outer-wrap .shrink-icon:hover {
+  @include style-tool-color('color', 'tbIcon-emp', important);
+}
+
+.bottom-result-wrap .el-table .sort-caret.descending:hover {
+  @include style-tool-color('border-color', 'toolthead');
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-bottom-color: transparent !important;
+}
+
+.bottom-result-wrap .el-table .sort-caret.ascending:hover {
+  @include style-tool-color('border-color', 'toolthead');
+  border-left-color: transparent !important;
+  border-right-color: transparent !important;
+  border-top-color: transparent !important;
+}
+
+.func-top-wrap .el-tree-node__content:hover [class^=icon-],
+.func-top-wrap .is-current>.el-tree-node__content [class^=icon-],
+.func-top-wrap .is-current>.el-tree-node__content {
+  @include style-tool-color('color', 'emphasize');
+}
+
+.func-bottom-wrap .func-tit-wrap {
+  @include style-tool-color('background-color', 'tagitem');
+  @include style-tool-color('color', 'tbIcon-emp');
+}
+
+.frame-outer-wrap {
+
+  [class*=" icon-"],
+  [class^=icon-],
+  [class^=el-icon-] {
+    &:hover {
+      @include style-tool-color('color', 'tbIcon-emp', important);
+    }
+  }
+}
+
+//弹窗头部
+.el-dialog__header {
+  border-bottom: 1px solid #dcdfe6;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 20px;
+}
+
+// 弹窗内容
+.el-dialog__body {
+  padding: 20px;
+}
+
+// 弹窗底部
+.el-dialog__footer {
+  // border-top: 1px solid $border-clr01;
+  padding-bottom: 20px;
+}
+
+// el-scrollbar样式重置
+.ht-overflow .el-scrollbar__wrap {
+  overflow: hidden;
+}
+
+.ht-overflow:hover .el-scrollbar__wrap {
+  overflow: visible;
+  overflow-x: hidden;
+}
+
+.el-scrollbar__thumb {
+  background-color: rgba(10, 43, 76, 0.3);
+}

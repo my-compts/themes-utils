@@ -1,0 +1,66 @@
+// 首页
+// theme01
+// theme02
+@import './toolVariables.scss';
+// 这边名称尽量不要用到css中的关键字，例如之前jsblue是lightblue就会出错
+$themes-tool:(default:$theme-default,
+        lightred:$theme-lightred,
+        jsblue:$theme-jsblue);
+
+// 背景色统一入口
+@mixin style-tool-color($attr, $key, $params: '', $special-value: '') {
+
+  // 样式属性，类型，其他属性
+  @if $params==nochange {
+    #{$attr}: #{$key}
+  }
+
+  @else {
+    // 对于像有上下左右的边框属性适用
+    @if $params==special {
+      #{$special-value}: map-tool-deep-get($theme-default, '#{$attr}-default', $key) !important;
+    }
+    @else {
+      // 默认
+      #{$attr}: map-tool-deep-get($theme-default, '#{$attr}-default', $key);
+    }
+
+    // 主题
+    @each $theme-name,
+    $map in $themes-tool {
+      .tool-theme-#{$theme-name} & {
+        @if $params==gradient {
+          #{$attr}: linear-gradient(map-tool-deep-get($map, '#{$attr}-#{$theme-name}', $key));
+        }
+
+        @else if $params==important {
+          #{$attr}: map-tool-deep-get($map, '#{$attr}-#{$theme-name}', $key) !important;
+        }
+        @else if $params==special {
+          #{$special-value}: map-tool-deep-get($map, '#{$attr}-#{$theme-name}', $key) !important;
+        }
+        @else {
+          #{$attr}: map-tool-deep-get($map, '#{$attr}-#{$theme-name}', $key);
+        }
+      }
+    }
+  }
+
+}
+
+// 多层处理
+@function map-tool-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+// 公共默认样式
+@each $theme-name,
+$map in $themes-tool {
+  .tool-theme-#{$theme-name} {
+    color: map-tool-deep-get($map, 'color-#{$theme-name}', 'main');
+  }
+}
